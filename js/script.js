@@ -20,6 +20,13 @@ function filterCharacters(house, sorted ) {
 
 displayCharacters(data.slice(0, 12));
 
+let currentCharacters = data.slice(0, 12);
+
+document.getElementById("sort-abc").addEventListener("click", () => {
+  const sorted = [...currentCharacters].sort((a, b) => a.name.localeCompare(b.name));
+  displayCharacters(sorted);
+});
+
 const filterButtons = document.querySelectorAll(".filter-button");
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
